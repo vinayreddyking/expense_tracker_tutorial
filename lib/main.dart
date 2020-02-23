@@ -24,22 +24,29 @@ class MyHome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Expense Tracker"),
-      ),
-      body: Column(
-        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment:CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            child: Card(
-              color: Colors.blue,
-              child: Text("Expense Chart"),
-              elevation: 5,
-            ),
-          ),
-          UserTransactions(),  
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.add), onPressed: (){}),
         ],
       ),
+      body: SingleChildScrollView(
+              child: Column(
+          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment:CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Card(
+                color: Colors.blue,
+                child: Text("Expense Chart"),
+                elevation: 5,
+              ),
+            ),
+            UserTransactions(),  
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(child:Icon(Icons.add),onPressed: (){},),
     );
   }
 }
