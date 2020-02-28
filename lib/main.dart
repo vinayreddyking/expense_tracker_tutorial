@@ -39,7 +39,11 @@ class _MyHomeState extends State<MyHome> {
 
   void _startAddNewTransaction(BuildContext ctx){
     showModalBottomSheet(context: ctx, builder:(_){
-      return NewTransaction(_addNewTransaction);
+      return GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        child: NewTransaction(_addNewTransaction),
+        onTap: (){},
+        );
     });
   }
 
